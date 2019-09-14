@@ -1,0 +1,13 @@
+<html>
+  <head>
+  {{partial "header"}}
+  </head>
+  <body>
+    <div>
+      <h1>{{.Title}}</h1>
+      {{.TableOfContents}}
+      <div>{{.Content}}</div>
+    </div>
+    {{partial "footer" . }}
+</body>
+</html>

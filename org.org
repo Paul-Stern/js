@@ -1,0 +1,5 @@
+* Creating presentation
+Options:
+1. org-reveal
+2. ox-hugo => reveal-hugo
+Let's try the second.

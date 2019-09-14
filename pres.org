@@ -1,0 +1,20 @@
+#+HUGO_BASE_DIR: ./js/
+#+HUGO_SECTION: ./reveal
+#+HUGO_FILE_NAME: _index.md
+
+#+begin_hugo_export
+[reveal_hugo]
+#+end_hugo_export
+
+* First slide
+Hello there!
+
+#+begin_hugo_export
+---
+#+end_hugo_export
+* Second slide
+How are you?
+
+---
+
+Is this the third slide?
