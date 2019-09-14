@@ -1,17 +1,13 @@
-#+HUGO_BASE_DIR: ./js/
+#+HUGO_BASE_DIR: ./site/
 #+HUGO_SECTION: ./reveal
-#+HUGO_FILE_NAME: _index.md
-
-#+begin_hugo_export
-[reveal_hugo]
-#+end_hugo_export
-
+#+EXPORT_FILE_NAME: _index.md
+#+HUGO_MENU: :reveal_hugo
+#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Reveal"
+# [reveal_hugo]
 * First slide
 Hello there!
 
-#+begin_hugo_export
 ---
-#+end_hugo_export
 * Second slide
 How are you?
 

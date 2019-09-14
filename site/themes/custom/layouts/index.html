@@ -1,0 +1,18 @@
+<html>
+  <head>
+  {{partial "header" . }}
+  </head>
+  <body>
+    {{partial "head" . }}
+    <!-- the line above doesn't work somehow. Make it work -->
+    <!-- Now it works -->
+    <!-- Not working line: -->
+    <!-- {{partial "head"}} -->
+    <div>
+      <h2>{{.Title}}</h2>
+      <!-- {{.TableOfContents}} -->
+      <div>{{.Content}}</div>
+    </div>
+    {{partial "footer" . }}
+</body>
+</html>

@@ -1,0 +1,16 @@
+baseURL = "paul-stern.github.io/js"
+languageCode = "RU-ru"
+title = "JavaScript"
+publishDir= "../docs/"
+
+theme= ["custom", "reveal-hugo"]
+
+[outputFormats.Reveal]
+# baseName = "index"
+mediaType = "text/html"
+isHTML = true
+# theme = "reveal-hugo"
+# doesn't work
+[outputFormats.Base]
+# theme = "custom"
+# doesn't work
