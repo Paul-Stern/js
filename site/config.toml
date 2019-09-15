@@ -2,6 +2,7 @@ baseURL = "paul-stern.github.io/js"
 languageCode = "RU-ru"
 title = "JavaScript"
 publishDir= "../docs/"
+enableEmoji = 'true'
 
 theme= ["custom", "reveal-hugo"]
 
@@ -11,6 +12,10 @@ mediaType = "text/html"
 isHTML = true
 # theme = "reveal-hugo"
 # doesn't work
+
 [outputFormats.Base]
 # theme = "custom"
 # doesn't work
+
+[params.reveal_hugo]
+theme = "moon"
