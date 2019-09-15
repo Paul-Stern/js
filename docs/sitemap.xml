@@ -3,20 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>paul-stern.github.io/js/index</loc>
+    <loc>https://paul-stern.github.io/js/index</loc>
   </url>
   
   <url>
-    <loc>paul-stern.github.io/js/reveal/</loc>
+    <loc>https://paul-stern.github.io/js/reveal/</loc>
   </url>
   
   <url>
-    <loc>paul-stern.github.io/js/categories/</loc>
+    <loc>https://paul-stern.github.io/js/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>paul-stern.github.io/js/tags/</loc>
+    <loc>https://paul-stern.github.io/js/tags/</loc>
     <priority>0</priority>
   </url>
   
