@@ -1,7 +1,6 @@
 #+HUGO_BASE_DIR: ./site/
 #+HUGO_SECTION: ./
 #+EXPORT_FILE_NAME: _index.md
-# #+HUGO_MENU: :reveal_hugo
-#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Base"
+# #+HUGO_CUSTOM_FRONT_MATTER: :outputs "Base"
 
 Just basic file with a custom theme

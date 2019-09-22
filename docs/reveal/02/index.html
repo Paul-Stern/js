@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>JavaScript</title>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/js/reveal-js/css/reveal.css"><link rel="stylesheet" href="/js/reveal-js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="/js/highlight-js/default.min.css">
+    
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+  
+<section>
+
+<h2 id="занятие-2">Занятие №2</h2>
+
+<p>Строковый и логический типы данных.</p>
+
+<p>Условные операторы</p>
+
+</section><section>
+
+<p>Каждый пример, который мы будем рассматривать, можно сразу же исполнять в консоли 💻.</p>
+
+</section><section>
+
+<h3 id="строки--strings">Строки (strings)</h3>
+
+<pre><code class="language-javascript">let text = 'Латынь из моды вышла ныне.';
+</code></pre>
+
+<p>Строки &mdash; это последовательности символов.</p>
+
+<p>Функции на сегодня:</p>
+
+<ul>
+<li><code>String()</code></li>
+<li><code>string.indexOf()</code></li>
+<li><code>string.slice()</code></li>
+<li><code>string.toLowerCase()</code></li>
+<li><code>string.toUpperCase()</code></li>
+</ul>
+
+</section><section>
+
+<p>Большинство рассматриваемых примеров предназначены для выполнения в консоли, а не для сохранения в файл.</p>
+
+<p>Попробуйте ввести в консоли:</p>
+
+<pre><code class="language-js">text
+// 'Латынь из моды вышла ныне.'
+</code></pre>
+
+</section><section>
+
+<p>Попробуйте запустить скрипт, сохранив в него:</p>
+
+<pre><code class="language-js">let text = 'Латынь из моды вышла ныне.';
+text
+</code></pre>
+
+<p>Что получится в результате?</p>
+
+<p>В чем разница между запуском этого кода из консоли и из файла?</p>
+
+</section><section>
+
+<h4 id="экранирование-символов">Экранирование символов</h4>
+
+<p>Помимо обычных символов строки в JavaScript могут содержать управляющие конструкции.</p>
+
+<p>Самые распространенные:</p>
+
+<ul>
+<li><code>\n</code> &mdash; перенос строки</li>
+<li><code>\t</code> &mdash; табуляция</li>
+</ul>
+
+</section><section>
+
+<pre><code class="language-js">let table1 = '1 10 100\n' + '10 100 1000\n' + '100 1000 10000';
+let table2 = '1\t10\t100\n' + '10\t100\t1000\n' + '100\t1000\t10000';
+</code></pre>
+
+</section><section>
+
+<section data-shortcode-section>
+<h4 id="свойства-строк">Свойства строк</h4>
+
+<pre><code class="language-js">let text = 'Латынь из моды вышла ныне';
+console.log(text.length);
+// 25
+</code></pre>
+
+<p>Length - длина. Такой вызов возвращает длину строки. length - свойство переменной text. Любая строка обладает этим свойством.</p>
+
+</section><section>
+
+<pre><code class="language-js">text[n]
+</code></pre>
+
+<p>С помощью этой конструкции можно получать n-ный элемент строки. Нумерация начинается с 0.</p>
+
+<pre><code class="language-js">console.log(text[0]);
+// 'Л'
+console.log(text[1]);
+// 'а'
+console.log(text[7]);
+// 'и'
+</code></pre>
+
+</section><section>
+
+<p>Строки являются неизменяемым типом данных. Это значит, что невозможно изменить произвольный элемент строки.</p>
+
+<pre><code class="language-js">text[0] = 'л'
+</code></pre>
+
+<p>Код выше не вызывает ошибок, но и не дает ожидаемого результата:</p>
+
+<pre><code class="language-js">console.log(text);
+// 'Латынь из моды вышла ныне'
+</code></pre>
+
+</section><section>
+
+<p>В JavaScript есть &bdquo;строгий режим&rdquo;, который вызывает ошибки в недопустимых конструкциях. Активировать его можно добавив в начало скрипта строчку <code>'use script'</code>. Попробуйте этот пример:</p>
+
+<pre><code class="language-js">'use strict';
+let text = &quot;Латынь из моды вышла ныне&quot;;
+text[0] = &quot;л&quot;;
+console.log(text);
+</code></pre>
+
+</section>
+
+</section><section>
+
+<pre><code class="language-js">text.indexOf()
+</code></pre>
+
+<p>В качестве аргумента эта функция принимает строку для поиска, а выводит начальную позицию этой строки.</p>
+
+<pre><code class="language-js">text.indexOf('м')
+// 10
+text.indexOf('ы')
+// 3
+text.indexOf('ды')
+// 12
+text[12]
+// 'д'
+</code></pre>
+
+</section><section>
+
+<p>Функции, перечисленные выше, работают для всех строковых значений. Например:</p>
+
+<pre><code class="language-js">let letter = 'с';
+let word =  'спокойствие';
+let sentence = 'Никогда не теряй спокойствие.';
+
+letter.indexOf('с');
+// 0
+word.indexOf('с');
+// 0
+sentence.indexOf('с');
+// 17
+</code></pre>
+
+</section><section>
+
+<h4 id="string-dot-slice--начало-конец"><code>string.slice(начало [, конец])</code></h4>
+
+<p>Функция позволяет копировать часть строки. В качестве аргументов принимает начальный индекс и, опционально, конечный. Возвращает копию фрагмента строки.</p>
+
+</section><section>
+
+<p>Схема:</p>
+
+<p>начало (+ конец) фрагмента → <code>string.slice()</code> → копия фрагмента строки</p>
+
+<pre><code class="language-js">text.slice(10, 14)
+// 'моды'
+text.slice(21)
+// 'ныне'
+text.slice(-4)
+// 'ныне'
+text.slice(7)
+// 'из моды вышла ныне'
+</code></pre>
+
+</section><section>
+
+<h4 id="touppercase-и-tolowercase"><code>toUpperCase()</code> и <code>toLowerCase()</code></h4>
+
+<pre><code class="language-js">let text = 'СтРоКа';
+text.toLowerCase() // 'строка'
+text.toUpperCase() // 'СТРОКА'
+</code></pre>
+
+</section><section>
+
+</section><section>
+
+<h4 id="задачи">Задачи</h4>
+
+</section><section>
+
+<p>№1</p>
+
+<pre><code class="language-js">let text = 'nunc aliquet bibendum enim';
+</code></pre>
+
+<p>Вывести копию данной строки без первого слова, используя функции slice()  и indexOf().</p>
+
+</section><section>
+
+<p>№2
+Используя те же функции, получить и вывести строку</p>
+
+<pre><code class="language-js">&quot;enim nunc aliquet bibendum enim&quot;
+</code></pre>
+
+</section><section>
+
+<h3 id="булевы-значения">Булевы значения</h3>
+
+<section data-shortcode-section>
+&mdash; это значения <code>true</code> или <code>false</code>. Мы рассмотрим следующие <strong>операторы</strong>, связанные с ними:</p>
+
+</section><section>
+
+<ul>
+<li><code>&amp;&amp;</code></li>
+<li><code>||</code></li>
+<li><code>!</code></li>
+<li><code>==</code></li>
+<li><code>!=</code></li>
+<li><code>&lt;</code></li>
+<li><code>&gt;</code></li>
+<li><code>&lt;=</code></li>
+<li><code>&gt;=</code></li>
+</ul>
+</section>
+
+</section><section>
+
+<h4 id="логические-операторы">Логические операторы</h4>
+
+<p>JavaScript поддерживает 3 логичеких оператора:</p>
+
+<ul>
+<li><code>&amp;&amp;</code></li>
+<li><code>||</code></li>
+<li><code>!</code></li>
+</ul>
+
+</section><section>
+
+<section data-shortcode-section>
+<h4 id="and-and">&amp;&amp;</h4>
+
+<p><code>&amp;&amp;</code> &mdash; это оператор &bdquo;и&rdquo;. Также он называется &bdquo;коньюнкция&rdquo; или логическое умножение.
+Он возвращает <code>true</code>, если оба предоставленные ему операнда (значения) равны <code>true</code>. В остальных случаях &mdash; <code>false</code>.</p>
+
+<p>Например:</p>
+
+<pre><code class="language-js">true &amp;&amp; true // true
+true &amp;&amp; false // false
+</code></pre>
+
+</section><section>
+
+<h4>||</h4>
+
+<p><code>||</code> &mdash; это оператор &bdquo;или&rdquo;. Также он называется &bdquo;дизъюнкция&rdquo; или &bdquo;логическое сложение&rdquo;. Этот оператор возвращает <code>false</code>, если оба значения равны <code>false</code>. В остальных случаях &mdash; <code>true</code>.</p>
+
+<p>Например:</p>
+
+<pre><code class="language-js">false || false // false
+false || true // true
+</code></pre>
+
+</section><section>
+
+<h4>!</h4>
+
+<p><code>!</code> &mdash; это оператор &bdquo;не&rdquo;. Также он называется &bdquo;отрицание&rdquo;.</p>
+
+<p>Этот оператор &bdquo;переворачивает&rdquo; данное ему значение.</p>
+
+<p>Например:</p>
+
+<pre><code class="language-js">!true // false
+!false // true
+</code></pre>
+
+</section>
+
+</section><section>
+
+<h4 id="таблица-истинности">Таблица истинности</h4>
+
+</section><section>
+
+<p>Вы знаете, что это?</p>
+
+<p>Умеете ли ее составлять?</p>
+
+</section><section>
+
+<p>Составим таблицу истинности для <code>a &amp;&amp; b</code> и</p>
+
+<p><code>a || b</code>. Будем считать, что <code>true</code> &mdash; <code>1</code>, а <code>false</code> &mdash; <code>0</code>.</p>
+
+</section><section>
+
+<table>
+    <tr>
+    <th>a</th>
+    <th>b</th>
+    <th>a && b</th>
+    <th>a || b</th>
+    </tr>
+    <tr>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    </tr>
+    <tr>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    </tr>
+    <tr>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    </tr>
+    <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    </tr>
+</table>
+
+</section><section>
+
+<h4 id="задача">Задача</h4>
+
+<p>Заполнить таблицу истинности (можно использовать компьютер):</p>
+
+<table>
+  <tr>
+    <th>a</th>
+    <th>b</th>
+    <th>a && b</th>
+    <th>a || b</th>
+    <th>(a && b) || a</th>
+    <th>(a || b) && b</th>
+  </tr>
+</table>
+
+</section><section>
+
+<table>
+  <tr>
+    <th>a</th>
+    <th>b</th>
+    <th>c</th>
+    <th>(a && b) || c</th>
+    <th>(a || b) && c</th>
+  </tr>
+</table>
+
+</section><section>
+
+<h4 id="операторы-сравнения">Операторы сравнения</h4>
+
+<p><code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code> &mdash; все это операторы сравнения. Они возвращают <code>true</code>, если знак выполняется, и <code>false</code> в противном случае.</p>
+
+<p>Как вы думаете, что они значат?</p>
+
+</section><section>
+
+<p><code>==</code>, <code>!=</code>.</p>
+
+<p>Примеры их применения:</p>
+
+<pre><code class="language-js">(true == true) &amp;&amp; (182e-4 == 182e-4) &amp;&amp; ('JS' == 'JS');
+
+(true != false) &amp;&amp; (Infinity != NaN) &amp;&amp; ('Scheme' != 'Python');
+</code></pre>
+
+<p>Что получится в результаты выполнения этого кода?</p>
+
+</section><section>
+
+<p><code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></p>
+
+<pre><code class="language-js">(NaN &gt; 0) || (-Infinity &gt;= 18) || (47e4 &lt; 47e-4)
+</code></pre>
+
+</section><section>
+
+<h4 id="условный-оператор-if--если--else--иначе">Условный оператор if(если) else(иначе)</h4>
+
+<pre><code class="language-text">if (bool1) {
+  ... code1 ...
+} else if (bool2) {
+  ... code2 ...
+} ...
+...
+} else {
+  ... code else ...
+}
+</code></pre>
+
+</section><section>
+
+<p>Условный оператор if else также называется оператором ветвления. Он позволяет программе идти по разным &bdquo;веткам&rdquo; кода в зависимости от выполнения условия.</p>
+
+</section><section>
+
+<p>Рассмотрим примеры:</p>
+
+</section><section>
+
+<pre><code class="language-js">if(true) {
+    console.log(1);
+} else if(true) {
+    console.log(2);
+} else {
+    console.log(3);
+};
+</code></pre>
+
+</section><section>
+
+<pre><code class="language-js">let number = prompt('Введите целое число от 1 до 10');
+if (number &lt; 4) {
+    alert('Число меньше 4')
+} else if(number &lt;= 7){
+    alert('Число больше 3 и меньше 8 ')
+} else {
+    alert('Число больше 7')
+}
+</code></pre>
+
+</section><section>
+
+<h4 id="задачи-1">Задачи</h4>
+
+</section><section>
+
+<p>Найти большее из 2 чисел.</p>
+
+</section><section>
+
+<p>Из 3.</p>
+
+</section><section>
+
+<p>Из 4.</p>
+
+</section><section>
+
+<p>5 =).</p>
+
+</section><section>
+
+<p>Найти альтернативные решения предыдущих задач с использованием логических операторов (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>).</p>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=/js/reveal-hugo/object-assign.js></script>
+
+<a href="/js/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">{"theme":"moon"}</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="/js/reveal-js/lib/js/head.min.js"></script>
+<script src="/js/reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+  Reveal.initialize(options);
+</script>
+
+<script type="text/javascript" src="/js/reveal-js/lib/js/classList.js"></script>
+
+
+<script type="text/javascript" src="/js/reveal-js/plugin/markdown/marked.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/markdown/markdown.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/highlight/highlight.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/zoom-js/zoom.js"></script>
+
+
+<script type="text/javascript" src="/js/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+<script type="text/javascript">
+if (hljs)
+  hljs.initHighlightingOnLoad();
+</script>
+    
+    
+  </body>
+</html>

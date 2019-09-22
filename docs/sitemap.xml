@@ -3,7 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://paul-stern.github.io/js/index</loc>
+    <loc>https://paul-stern.github.io/js/</loc>
+  </url>
+  
+  <url>
+    <loc>https://paul-stern.github.io/js/reveal/02/</loc>
   </url>
   
   <url>
