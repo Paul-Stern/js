@@ -1,0 +1,29 @@
+* №1
+Дана строка:
+#+BEGIN_SRC js
+  let word = "lacus"
+#+END_SRC
+
+Используя индекс элементов строки, 
+(см. https://paul-stern.github.io/js/reveal/02/#/7/1 )
+получите и выведите новую строку
+#+BEGIN_SRC 
+// salluc
+#+END_SRC
+
+* №2
+
+Дана строка
+#+BEGIN_SRC js
+  let sentence = 'quisque sed dignissim felis, ut gravida nulla'
+#+END_SRC
+
+
+Используя функции (а точнее, методы) ~.indexOf()~ 
+([[https://paul-stern.github.io/js/reveal/02/#/8]]) и 
+~.slice()~ ([[https://paul-stern.github.io/js/reveal/02/#/11]]),
+получите и выведите строку:
+
+#+BEGIN_SRC js
+  // 'nulla sed dignissim felis, ut gravida'
+#+END_SRC
