@@ -1,0 +1,368 @@
+#+HUGO_BASE_DIR: ../site/
+#+HUGO_SECTION: ./reveal/03
+#+EXPORT_FILE_NAME: _index.md
+#+HUGO_MENU: :reveal_hugo
+#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Reveal"
+
+* Занятие №3
+Массивы. Цикл for.
+
+---
+
+** Массивы
+
+#+BEGIN_SRC js
+  let array = ['string', true, 11];
+  console.log(array.length);
+  // 3
+  console.log(array[0]);
+  // "string"
+  console.log(array[0][2]);
+  // "r"
+  console.log(array[1]);
+  // true
+  console.log(array[2]);
+  // 11
+#+END_SRC
+
+---
+
+** Метод ~.push()~
+
+Этот метод в качестве аргумента принимает элементы для добавления к концу массива.
+
+#+BEGIN_SRC js
+  let array = ['string', true, 11];
+  console.log(array);
+  // (3) ['string', true, 11]
+  array.push('football');
+  // 4 (если интерактивно)
+  console.log(array);
+  // (4) ['string', true, 11, 'football']
+#+END_SRC
+
+---
+
+** Метод ~.pop()~
+
+#+BEGIN_SRC js
+  console.log(array);
+  // (4) ['string', true, 11, 'football']
+  array.pop();
+  // 'football' (если интерактивно)
+  console.log(array);
+  // (3) ['string', true, 11]
+#+END_SRC
+
+Этот метод не принимает аргументов.
+
+---
+
+** Методы ~.shift()~  и  ~.unshift()~
+
+Метод ~.unshift()~ в качестве аргументов принимает значения для добавление в *начало* массива.
+
+#+BEGIN_SRC js
+  console.log(array);
+  // (3) ['string', true, 11]
+  array.shift();
+  // 'string' - если интерактивно
+  console.log(array);
+  // (2) [true, 11]
+  array.unshift('word')
+  // 3 - если интерактивно
+  console.log(array);
+  // (3) ['word', true, 11]
+#+END_SRC
+
+---
+
+** Методы ~.slice()~  и ~.splice()~
+
+Имена данных методов легко спутать, но делать этого не стоит, поскольку работают они по-разному.
+
+---
+
+** ~.slice()~
+
+=array.slice([начало [, конец]])=
+
+Работает так же, как и для строк.
+
+Метод .slice() возвращает копию массива с элементами в промежутке между указанными позициями. Если они не указаны, массив копируется целиком.
+
+---
+
+#+BEGIN_SRC js
+  console.log(array);
+  // (3) ['word', true, 11]
+  console.log(array.slice(1));
+  // (2) [true, 11]
+  console.log(array);
+  // (3) ['word', true, 11]
+#+END_SRC
+
+Как видим, после применения метода исходный массив не меняется.
+
+---
+
+** ~.splice()~
+
+=array.splice(начало[, кол-во[, элем1[, элем2[, ...]]]])=
+
+Этот метод работает совсем иначе. Он либо удалает часть массива, либо заменяет ее на указанные элементы.
+
+Характеристика метода:
+- возвращает удаленный фрагмент массива
+- 1-ый аргумент \mdash начальный индекс
+- 2-ой \mdash кол-во элементов для удаления
+- 3-ий и далее \mdash значения для вставки 
+
+---
+
+#+BEGIN_SRC js
+  console.log(array);       // (3) ['word', true, 11]
+  array.splice();           // [] (интерактивно)
+  console.log(array);       // (3) ['word', true, 11]
+  array.splice(1, 1, false) // [true] (интерактивно)
+  console.log(array);       // (3) ['word', false, 11]
+  array.splice(2, 0, 2e-3)  // [] (интерактивно)
+  console.log(array);       // (4) ["word", false, 0.002, 11]
+#+END_SRC
+
+---
+
+** Копирование массивов
+
+---
+
+Как вы думаете, как можно скопировать массив?
+
+---
+
+Попробуем скопировать массив следующим образом. Что из этого получится?
+
+#+BEGIN_SRC js
+  let array1 = ["word", false, 0.002, 11];
+  let array2 = array1;
+  array1.pop();
+  console.log(array2);
+  // ["word", false, 0.002]
+#+END_SRC
+
+Мы меняли массив 1, а вместе с ним изменился массив 2.
+
+---
+
+Рассмотрим другой вариант.
+
+#+BEGIN_SRC js
+  let array1 = ["word", false, 0.002, 11];
+  let array2 = array1.slice();
+  array1.pop();
+  console.log(array2);
+  // ["word", false, 0.002, 11]
+#+END_SRC
+
+Здесь массивы оказались независимыми. 
+
+Поэтому если хотите скопировать массив, пользуйтесь этим вариантом.
+
+---
+
+** Задачи
+
+---
+
+*** 
+Дан массив:
+#+BEGIN_SRC js
+  let array = ['string', true, 11];
+#+END_SRC
+
+Используя методы ~.pop()~ и ~.push()~ получить и вывести массив:
+
+#+BEGIN_SRC js
+  ['string', 20000, 2, 3, false, 2 ]
+#+END_SRC
+
+---
+
+*** 
+#+BEGIN_SRC js
+  let array = ['word', false, 11];
+#+END_SRC
+
+Используя методы ~.shift()~ и ~.unshift()~, получить и вывести массив:
+
+#+BEGIN_SRC js
+  [1, 7, true, 'string', false, 11 ]
+#+END_SRC
+
+---
+
+*** 
+#+BEGIN_SRC js
+  let array = [1, 7, true, 'string', false, 11 ];
+#+END_SRC
+
+Используя методы ~.pop()~, ~.push()~, ~.shift()~ и ~.unshift()~, получить и вывести:
+
+#+BEGIN_SRC js
+  [14, 2, false, 'string', true, 0]
+#+END_SRC
+
+---
+
+*** 
+Дано:
+#+BEGIN_SRC js
+  let array = [1, 7, true, 'string', false, 11 ];
+#+END_SRC
+
+Используя ~.push()~ и ~.shift()~, получить и вывести:
+
+#+BEGIN_SRC js
+  ['string', false, 11, 1, 7, true]
+#+END_SRC
+
+---
+
+*** 
+Дано:
+#+BEGIN_SRC js
+  let array = [1, 1, 1, 1, 1, 1, 1];
+#+END_SRC
+
+Используя метод ~.spilce()~, получить и вывести:
+
+#+BEGIN_SRC js
+  [1, 1, 2, 2, 2, 1, 1, 1, 1, 1]
+#+END_SRC
+
+---
+
+Дано:
+#+BEGIN_SRC js
+  let array = [1, 1, 1, 1, 1, 1, 1];
+#+END_SRC
+
+Используя метод ~.spilce()~, получить и вывести:
+#+BEGIN_SRC js
+  [1, 1, 2, 2, 2, 1, 1]
+#+END_SRC
+
+---
+
+** Цикл =for=
+
+---
+
+Что такое циклы?
+
+---
+
+#+BEGIN_SRC js
+  let array = ["word", false, 0.002, 11];
+  for (let i = 0; i < array.length; i++) {
+      console.log(array[i] + ' and BAR');
+  };
+  // word and BAR
+  // false and BAR
+  // 0.002 and BAR
+  // 11 and BAR
+#+END_SRC
+
+
+---
+
+#+BEGIN_SRC js
+  let array = ["word", false, 0.002, 11];
+  for (let elem of array) {
+      console.log(elem + ' and BAR');
+  }
+  // word and BAR
+  // false and BAR
+  // 0.002 and BAR
+  // 11 and BAR
+#+END_SRC
+
+---
+
+Но
+
+#+BEGIN_SRC js
+  let array = ["word", false, 0.002, 11];
+  for (let i = 0; i < array.length; i += 2) {
+      console.log(array[i] + ' and BAR');
+  };
+  // word and BAR
+  // 0.002 and BAR
+#+END_SRC
+
+---
+
+** Задачи
+
+---
+
+*** 
+Дан массив. Вывести только четные элементы массива.
+
+---
+
+*** 
+Дан массив. Вывести массив, элементы которого составляют суммы двух соседних элементов данного массива
+
+*** 
+
+Вывести сообщение 'Hello, for' 5 раз, используя цикл =for=.
+
+---
+
+Создать пустой массив и заполнить его 7 значениями из ~prompt()~, используя цикл =for=. Затем используя вновь этот цикл вывести все значения по отдельности.
+
+---
+
+Создать пустой массив array. Заполнить его числами от 1 до 10, используя цикл =for=. Вывести значения массива по отдельности. 
+
+---
+
+ Используя цикл =for= вывести следующее: 
+
+#+BEGIN_SRC js
+  #
+  ##
+  ###
+  ####
+  #####
+  ######
+  #######
+#+END_SRC
+
+---
+
+
+
+Вывести в консоль числа от 1 до 100. При этом, числа кратные 3 заменить на Fizz, 5-ти \mdash на Buzz.
+
+После этого замените числа кратные и 3, и 5 на FizzBuzz.
+
+---
+
+Составить и вывести шахматное поле, используя цикл =for= и символы ~" "~  и ~"#"~:
+
+#+BEGIN_SRC js
+   # # # #
+  # # # # 
+   # # # #
+  # # # # 
+   # # # #
+  # # # # 
+   # # # #
+  # # # # 
+#+END_SRC
+
+Сделать возможным указывать размерность поля.
+
+---

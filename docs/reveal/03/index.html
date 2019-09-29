@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>JavaScript</title>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/js/reveal-js/css/reveal.css"><link rel="stylesheet" href="/js/reveal-js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="/js/highlight-js/default.min.css">
+    
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+  
+<section>
+
+<h2 id="занятие-3">Занятие №3</h2>
+
+<p>Массивы. Цикл for.</p>
+
+</section><section>
+
+<h3 id="массивы">Массивы</h3>
+
+<pre><code class="language-js">let array = ['string', true, 11];
+console.log(array.length);
+// 3
+console.log(array[0]);
+// &quot;string&quot;
+console.log(array[0][2]);
+// &quot;r&quot;
+console.log(array[1]);
+// true
+console.log(array[2]);
+// 11
+</code></pre>
+
+</section><section>
+
+<h3 id="метод-dot-push">Метод <code>.push()</code></h3>
+
+<p>Этот метод в качестве аргумента принимает элементы для добавления к концу массива.</p>
+
+<pre><code class="language-js">let array = ['string', true, 11];
+console.log(array);
+// (3) ['string', true, 11]
+array.push('football');
+// 4 (если интерактивно)
+console.log(array);
+// (4) ['string', true, 11, 'football']
+</code></pre>
+
+</section><section>
+
+<h3 id="метод-dot-pop">Метод <code>.pop()</code></h3>
+
+<pre><code class="language-js">console.log(array);
+// (4) ['string', true, 11, 'football']
+array.pop();
+// 'football' (если интерактивно)
+console.log(array);
+// (3) ['string', true, 11]
+</code></pre>
+
+<p>Этот метод не принимает аргументов.</p>
+
+</section><section>
+
+<h3 id="методы-dot-shift-и-dot-unshift">Методы <code>.shift()</code>  и  <code>.unshift()</code></h3>
+
+<p>Метод <code>.unshift()</code> в качестве аргументов принимает значения для добавление в <strong>начало</strong> массива.</p>
+
+<pre><code class="language-js">console.log(array);
+// (3) ['string', true, 11]
+array.shift();
+// 'string' - если интерактивно
+console.log(array);
+// (2) [true, 11]
+array.unshift('word')
+// 3 - если интерактивно
+console.log(array);
+// (3) ['word', true, 11]
+</code></pre>
+
+</section><section>
+
+<h3 id="методы-dot-slice-и-dot-splice">Методы <code>.slice()</code>  и <code>.splice()</code></h3>
+
+<p>Имена данных методов легко спутать, но делать этого не стоит, поскольку работают они по-разному.</p>
+
+</section><section>
+
+<h3 id="dot-slice"><code>.slice()</code></h3>
+
+<p><code>array.slice([начало [, конец]])</code></p>
+
+<p>Работает так же, как и для строк.</p>
+
+<p>Метод .slice() возвращает копию массива с элементами в промежутке между указанными позициями. Если они не указаны, массив копируется целиком.</p>
+
+</section><section>
+
+<pre><code class="language-js">console.log(array);
+// (3) ['word', true, 11]
+console.log(array.slice(1));
+// (2) [true, 11]
+console.log(array);
+// (3) ['word', true, 11]
+</code></pre>
+
+<p>Как видим, после применения метода исходный массив не меняется.</p>
+
+</section><section>
+
+<h3 id="dot-splice"><code>.splice()</code></h3>
+
+<p><code>array.splice(начало[, кол-во[, элем1[, элем2[, ...]]]])</code></p>
+
+<p>Этот метод работает совсем иначе. Он либо удалает часть массива, либо заменяет ее на указанные элементы.</p>
+
+<p>Характеристика метода:</p>
+
+<ul>
+<li>возвращает удаленный фрагмент массива</li>
+<li>1-ый аргумент &mdash; начальный индекс</li>
+<li>2-ой &mdash; кол-во элементов для удаления</li>
+<li>3-ий и далее &mdash; значения для вставки</li>
+</ul>
+
+</section><section>
+
+<pre><code class="language-js">console.log(array);       // (3) ['word', true, 11]
+array.splice();           // [] (интерактивно)
+console.log(array);       // (3) ['word', true, 11]
+array.splice(1, 1, false) // [true] (интерактивно)
+console.log(array);       // (3) ['word', false, 11]
+array.splice(2, 0, 2e-3)  // [] (интерактивно)
+console.log(array);       // (4) [&quot;word&quot;, false, 0.002, 11]
+</code></pre>
+
+</section><section>
+
+<h3 id="копирование-массивов">Копирование массивов</h3>
+
+</section><section>
+
+<p>Как вы думаете, как можно скопировать массив?</p>
+
+</section><section>
+
+<p>Попробуем скопировать массив следующим образом. Что из этого получится?</p>
+
+<pre><code class="language-js">let array1 = [&quot;word&quot;, false, 0.002, 11];
+let array2 = array1;
+array1.pop();
+console.log(array2);
+// [&quot;word&quot;, false, 0.002]
+</code></pre>
+
+<p>Мы меняли массив 1, а вместе с ним изменился массив 2.</p>
+
+</section><section>
+
+<p>Рассмотрим другой вариант.</p>
+
+<pre><code class="language-js">let array1 = [&quot;word&quot;, false, 0.002, 11];
+let array2 = array1.slice();
+array1.pop();
+console.log(array2);
+// [&quot;word&quot;, false, 0.002, 11]
+</code></pre>
+
+<p>Здесь массивы оказались независимыми.</p>
+
+<p>Поэтому если хотите скопировать массив, пользуйтесь этим вариантом.</p>
+
+</section><section>
+
+<h3 id="задачи">Задачи</h3>
+
+</section><section>
+
+<p>Дан массив:</p>
+
+<pre><code class="language-js">let array = ['string', true, 11];
+</code></pre>
+
+<p>Используя методы <code>.pop()</code> и <code>.push()</code> получить и вывести массив:</p>
+
+<pre><code class="language-js">['string', 20000, 2, 3, false, 2 ]
+</code></pre>
+
+</section><section>
+
+<pre><code class="language-js">let array = ['word', false, 11];
+</code></pre>
+
+<p>Используя методы <code>.shift()</code> и <code>.unshift()</code>, получить и вывести массив:</p>
+
+<pre><code class="language-js">[1, 7, true, 'string', false, 11 ]
+</code></pre>
+
+</section><section>
+
+<pre><code class="language-js">let array = [1, 7, true, 'string', false, 11 ];
+</code></pre>
+
+<p>Используя методы <code>.pop()</code>, <code>.push()</code>, <code>.shift()</code> и <code>.unshift()</code>, получить и вывести:</p>
+
+<pre><code class="language-js">[14, 2, false, 'string', true, 0]
+</code></pre>
+
+</section><section>
+
+<p>Дано:</p>
+
+<pre><code class="language-js">let array = [1, 7, true, 'string', false, 11 ];
+</code></pre>
+
+<p>Используя <code>.push()</code> и <code>.shift()</code>, получить и вывести:</p>
+
+<pre><code class="language-js">['string', false, 11, 1, 7, true]
+</code></pre>
+
+</section><section>
+
+<p>Дано:</p>
+
+<pre><code class="language-js">let array = [1, 1, 1, 1, 1, 1, 1];
+</code></pre>
+
+<p>Используя метод <code>.spilce()</code>, получить и вывести:</p>
+
+<pre><code class="language-js">[1, 1, 2, 2, 2, 1, 1, 1, 1, 1]
+</code></pre>
+
+</section><section>
+
+<p>Дано:</p>
+
+<pre><code class="language-js">let array = [1, 1, 1, 1, 1, 1, 1];
+</code></pre>
+
+<p>Используя метод <code>.spilce()</code>, получить и вывести:</p>
+
+<pre><code class="language-js">[1, 1, 2, 2, 2, 1, 1]
+</code></pre>
+
+</section><section>
+
+<h3 id="цикл-for">Цикл <code>for</code></h3>
+
+</section><section>
+
+<p>Что такое циклы?</p>
+
+</section><section>
+
+<pre><code class="language-js">let array = [&quot;word&quot;, false, 0.002, 11];
+for (let i = 0; i &lt; array.length; i++) {
+    console.log(array[i] + ' and BAR');
+};
+// word and BAR
+// false and BAR
+// 0.002 and BAR
+// 11 and BAR
+</code></pre>
+
+</section><section>
+
+<pre><code class="language-js">let array = [&quot;word&quot;, false, 0.002, 11];
+for (let elem of array) {
+    console.log(elem + ' and BAR');
+}
+// word and BAR
+// false and BAR
+// 0.002 and BAR
+// 11 and BAR
+</code></pre>
+
+</section><section>
+
+<p>Но</p>
+
+<pre><code class="language-js">let array = [&quot;word&quot;, false, 0.002, 11];
+for (let i = 0; i &lt; array.length; i += 2) {
+    console.log(array[i] + ' and BAR');
+};
+// word and BAR
+// 0.002 and BAR
+</code></pre>
+
+</section><section>
+
+<h3 id="задачи-1">Задачи</h3>
+
+</section><section>
+
+<p>Дан массив. Вывести только четные элементы массива.</p>
+
+</section><section>
+
+<p>Дан массив. Вывести массив, элементы которого составляют суммы двух соседних элементов данного массива</p>
+
+<p>Вывести сообщение &lsquo;Hello, for&rsquo; 5 раз, используя цикл <code>for</code>.</p>
+
+</section><section>
+
+<p>Создать пустой массив и заполнить его 7 значениями из <code>prompt()</code>, используя цикл <code>for</code>. Затем используя вновь этот цикл вывести все значения по отдельности.</p>
+
+</section><section>
+
+<p>Создать пустой массив array. Заполнить его числами от 1 до 10, используя цикл <code>for</code>. Вывести значения массива по отдельности.</p>
+
+</section><section>
+
+<p>Используя цикл <code>for</code> вывести следующее:</p>
+
+<pre><code class="language-js">#
+##
+###
+####
+#####
+######
+#######
+</code></pre>
+
+</section><section>
+
+<p>Вывести в консоль числа от 1 до 100. При этом, числа кратные 3 заменить на Fizz, 5-ти &mdash; на Buzz.</p>
+
+<p>После этого замените числа кратные и 3, и 5 на FizzBuzz.</p>
+
+</section><section>
+
+<p>Составить и вывести шахматное поле, используя цикл <code>for</code> и символы <code>&quot; &quot;</code>  и <code>&quot;#&quot;</code>:</p>
+
+<pre><code class="language-js"> # # # #
+# # # #
+ # # # #
+# # # #
+ # # # #
+# # # #
+ # # # #
+# # # #
+</code></pre>
+
+<p>Сделать возможным указывать размерность поля.</p>
+
+</section><section>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=/js/reveal-hugo/object-assign.js></script>
+
+<a href="/js/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">{"theme":"moon"}</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="/js/reveal-js/lib/js/head.min.js"></script>
+<script src="/js/reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+  Reveal.initialize(options);
+</script>
+
+<script type="text/javascript" src="/js/reveal-js/lib/js/classList.js"></script>
+
+
+<script type="text/javascript" src="/js/reveal-js/plugin/markdown/marked.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/markdown/markdown.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/highlight/highlight.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/zoom-js/zoom.js"></script>
+
+
+<script type="text/javascript" src="/js/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+<script type="text/javascript">
+if (hljs)
+  hljs.initHighlightingOnLoad();
+</script>
+    
+    
+  </body>
+</html>
