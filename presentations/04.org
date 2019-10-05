@@ -1,0 +1,180 @@
+#+HUGO_BASE_DIR: ../site/
+#+HUGO_SECTION: ./reveal/04
+#+EXPORT_FILE_NAME: _index.md
+#+HUGO_MENU: :reveal_hugo
+#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Reveal"
+
+* Занятие №4
+
+** 
+
+функции
+
+---
+
+#+BEGIN_EXAMPLE
+const имяФункции = function(аргумент, …, аргумент) { 
+    ТелоФункции
+}
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+function имяФункции(аргумент, …, аргумент) { 
+    ТелоФункции
+}
+#+END_EXAMPLE
+
+Более подробное описание: 
+
+https://ecma-international.org/ecma-262/10.0/index.html#prod-FunctionDeclaration
+
+---
+
+https://ecma-international.org/ecma-262/10.0/index.html#prod-FunctionBody
+
+#+BEGIN_EXAMPLE
+ТелоФункции : 
+                СписокИнструкций
+#+END_EXAMPLE
+
+Список инструкций:
+
+https://ecma-international.org/ecma-262/10.0/index.html#prod-StatementList
+
+# ---
+# 
+# 
+# 
+# #+BEGIN_EXAMPLE
+# СписокИнструкций
+# #+END_EXAMPLE
+
+---
+
+#+BEGIN_SRC js
+const makeNoise = function() {
+  console.log("Pling!");
+};
+
+makeNoise();
+// 'Pling!'
+#+END_SRC
+
+---
+
+Функция с двумя аргументами
+
+#+BEGIN_SRC js
+  const power = function(base, exponent) {
+      let result = 1;
+      for (let count = 0; count < exponent; count++) {
+	  result *= base;
+      }
+      return result;
+  };
+#+END_SRC
+
+---
+
+Функции с неограниченным числом аргументов
+
+#+BEGIN_SRC js
+const argumentExplorer = function(...args) {
+    for (let x of args) {                   
+        console.log(x)                      
+    }                                       
+}
+#+END_SRC
+
+---
+
+Функции могут сочетать список аргументов с произвольным именем с аргументами по ключевым словам.
+
+#+BEGIN_SRC js
+  const argumentExplorer = function(firstArg, ...args) {
+      for (let x of args) {                             
+	  console.log(x)                                
+      }                                                 
+      console.log(`Первый аргумент - ${firstArg}`);     
+  }
+#+END_SRC
+
+---
+
+** Области видимости
+
+---
+
+Переменные объявленные с:
+- ~let~ видны только внутри блока.
+- ~var~ видны везде 
+
+#+BEGIN_EXAMPLE
+Блок :
+    { СписокИнструкций }
+#+END_EXAMPLE
+
+(https://ecma-international.org/ecma-262/10.0/index.html#prod-Block)
+
+---
+
+#+BEGIN_SRC js
+  let x = 10;
+  if (true) {
+      let y = 20;
+      var z = 30;
+      console.log(x + y + z);
+      // 60
+  }
+  console.log(x + z);
+  // 40
+  console.log(x + y);
+  // Uncaught ReferenceError: y is not defined
+#+END_SRC
+
+---
+
+Зачем тогда нужен ~let~?
+
+---
+
+Он позволяет использовать переменные с одинаковым именем в разных частях кода:
+
+#+BEGIN_SRC js
+  let x = 10;
+  if (true) {
+      let y = 20;
+      console.log(x + y);
+      // 30
+  }
+  if (true) {
+      let y = 40;
+      console.log(x + y)
+      // 50
+  }
+#+END_SRC
+
+---
+
+** Задачи
+
+---
+
+Напишите функцию, которая возводит аргумент в квадрат.
+
+
+---
+
+Создайте функцию, которая выводит в консоль "Hello" заданное аргументом количество раз.
+
+---
+
+Решить задачу занятия №3 (слайд #/18) новым способом. Создайте функцию, которая первый элемент массива делает последним, и решите задачу применив эту функцию.
+
+---
+
+Напишите функцию, которая из неограниченного числа аргументов находит наибольшее число (аргументы должны быть числами).
+
+---
+
+Создайте функцию, которая суммирует все введенные аргументы (неограниченное количество).

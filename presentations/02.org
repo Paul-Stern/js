@@ -420,7 +420,7 @@ true && false // false
 
 ---
 
-*** Условный оператор if(если) else(иначе)
+** Условный оператор if(если) else(иначе)
 #+BEGIN_EXAMPLE
 if (bool1) {
   ... code1 ...
