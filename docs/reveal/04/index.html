@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>JavaScript</title>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/js/reveal-js/css/reveal.css"><link rel="stylesheet" href="/js/reveal-js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="/js/highlight-js/default.min.css">
+    
+<link rel="stylesheet" href="/js/reveal-js/css/topnav.css">
+
+  </head>
+  <body>
+    
+      <div class="topnav">
+	Занятия:
+	<a href="../01">№ 1</a>
+	<a href="../02">№ 2</a>
+	<a href="../03">№ 3</a>
+	<a href="../04">№ 4</a>
+      </div>
+      
+      
+      
+      
+      
+      
+    <div class="reveal">
+      <div class="slides">
+  
+<section>
+
+<h2 id="занятие-4">Занятие №4</h2>
+
+<p>функции</p>
+
+</section><section>
+
+<pre><code class="language-text">const имяФункции = function(аргумент, …, аргумент) {
+    ТелоФункции
+}
+</code></pre>
+
+<pre><code class="language-text">function имяФункции(аргумент, …, аргумент) {
+    ТелоФункции
+}
+</code></pre>
+
+<p>Более подробное описание:</p>
+
+<p><a href="https://ecma-international.org/ecma-262/10.0/index.html#prod-FunctionDeclaration">https://ecma-international.org/ecma-262/10.0/index.html#prod-FunctionDeclaration</a></p>
+
+</section><section>
+
+<p><a href="https://ecma-international.org/ecma-262/10.0/index.html#prod-FunctionBody">https://ecma-international.org/ecma-262/10.0/index.html#prod-FunctionBody</a></p>
+
+<pre><code class="language-text">ТелоФункции :
+                СписокИнструкций
+</code></pre>
+
+<p>Список инструкций:</p>
+
+<p><a href="https://ecma-international.org/ecma-262/10.0/index.html#prod-StatementList">https://ecma-international.org/ecma-262/10.0/index.html#prod-StatementList</a></p>
+
+</section><section>
+
+<pre><code class="language-js">const makeNoise = function() {
+  console.log(&quot;Pling!&quot;);
+};
+
+makeNoise();
+// 'Pling!'
+</code></pre>
+
+</section><section>
+
+<p>Функция с двумя аргументами</p>
+
+<pre><code class="language-js">const power = function(base, exponent) {
+    let result = 1;
+    for (let count = 0; count &lt; exponent; count++) {
+	result *= base;
+    }
+    return result;
+};
+</code></pre>
+
+</section><section>
+
+<p>Функции с неограниченным числом аргументов</p>
+
+<pre><code class="language-js">const argumentExplorer = function(...args) {
+    for (let x of args) {
+	console.log(x)
+    }
+}
+</code></pre>
+
+</section><section>
+
+<p>Функции могут сочетать список аргументов с произвольным именем с аргументами по ключевым словам.</p>
+
+<pre><code class="language-js">const argumentExplorer = function(firstArg, ...args) {
+    for (let x of args) {
+	console.log(x)
+    }
+    console.log(`Первый аргумент - ${firstArg}`);
+}
+</code></pre>
+
+</section><section>
+
+<h3 id="области-видимости">Области видимости</h3>
+
+</section><section>
+
+<p>Переменные объявленные с:</p>
+
+<ul>
+<li><code>let</code> видны только внутри блока.</li>
+
+<li><p><code>var</code> видны везде</p>
+
+<pre><code class="language-text">Блок :
+{ СписокИнструкций }
+</code></pre></li>
+</ul>
+
+<p>(<a href="https://ecma-international.org/ecma-262/10.0/index.html#prod-Block">https://ecma-international.org/ecma-262/10.0/index.html#prod-Block</a>)</p>
+
+</section><section>
+
+<pre><code class="language-js">let x = 10;
+if (true) {
+    let y = 20;
+    var z = 30;
+    console.log(x + y + z);
+    // 60
+}
+console.log(x + z);
+// 40
+console.log(x + y);
+// Uncaught ReferenceError: y is not defined
+</code></pre>
+
+</section><section>
+
+<p>Зачем тогда нужен <code>let</code>?</p>
+
+</section><section>
+
+<p>Он позволяет использовать переменные с одинаковым именем в разных частях кода:</p>
+
+<pre><code class="language-js">let x = 10;
+if (true) {
+    let y = 20;
+    console.log(x + y);
+    // 30
+}
+if (true) {
+    let y = 40;
+    console.log(x + y)
+    // 50
+}
+</code></pre>
+
+</section><section>
+
+<h3 id="задачи">Задачи</h3>
+
+</section><section>
+
+<p>Напишите функцию, которая возводит аргумент в квадрат.</p>
+
+</section><section>
+
+<p>Создайте функцию, которая выводит в консоль &ldquo;Hello&rdquo; заданное аргументом количество раз.</p>
+
+</section><section>
+
+<p>Решить задачу занятия №3 (слайд #/18) новым способом. Создайте функцию, которая первый элемент массива делает последним, и решите задачу применив эту функцию.</p>
+
+</section><section>
+
+<p>Напишите функцию, которая из неограниченного числа аргументов находит наибольшее число (аргументы должны быть числами).</p>
+
+</section><section>
+
+<p>Создайте функцию, которая суммирует все введенные аргументы (неограниченное количество).</p>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src=/js/reveal-hugo/object-assign.js></script>
+
+<a href="/js/reveal-js/css/print/" id="print-location" style="display: none;"></a>
+<script type="text/javascript">
+  var printLocationElement = document.getElementById('print-location');
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = printLocationElement.href + (window.location.search.match(/print-pdf/gi) ? 'pdf.css' : 'paper.css');
+  document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+
+<script type="application/json" id="reveal-hugo-site-params">{"theme":"moon"}</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="/js/reveal-js/lib/js/head.min.js"></script>
+<script src="/js/reveal-js/js/reveal.js"></script>
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams));
+  Reveal.initialize(options);
+</script>
+
+<script type="text/javascript" src="/js/reveal-js/lib/js/classList.js"></script>
+
+
+<script type="text/javascript" src="/js/reveal-js/plugin/markdown/marked.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/markdown/markdown.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/highlight/highlight.js"></script>
+
+<script type="text/javascript" src="/js/reveal-js/plugin/zoom-js/zoom.js"></script>
+
+
+<script type="text/javascript" src="/js/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+<script type="text/javascript">
+if (hljs)
+  hljs.initHighlightingOnLoad();
+</script>
+    
+    
+  </body>
+</html>
