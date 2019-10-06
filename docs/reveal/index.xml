@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reveals on JavaScript</title>
+    <link>https://paul-stern.github.io/js/reveal/</link>
+    <description>Recent content in Reveals on JavaScript</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>RU-ru</language>
+    
+	<atom:link href="https://paul-stern.github.io/js/reveal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

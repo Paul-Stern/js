@@ -1,6 +1,7 @@
 +++
 draft = false
 outputs = "Reveal"
+aliases = "/reveal/"
 +++
 
 ## Программирование на языке JavaScript {#программирование-на-языке-javascript}

@@ -2,8 +2,9 @@
 #+HUGO_SECTION: ./reveal/01
 #+EXPORT_FILE_NAME: _index.md
 #+HUGO_MENU: :reveal_hugo
-#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Reveal"
+#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Reveal" :aliases "/reveal/"
 # [reveal_hugo]
+
 * Программирование на языке JavaScript
 
 ---

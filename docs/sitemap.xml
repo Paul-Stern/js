@@ -23,11 +23,12 @@
   </url>
   
   <url>
-    <loc>https://paul-stern.github.io/js/reveal/</loc>
+    <loc>https://paul-stern.github.io/js/categories/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://paul-stern.github.io/js/categories/</loc>
+    <loc>https://paul-stern.github.io/js/reveal/</loc>
     <priority>0</priority>
   </url>
   
