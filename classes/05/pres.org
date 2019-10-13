@@ -1,0 +1,60 @@
+#+HUGO_BASE_DIR: ../../site/
+#+HUGO_SECTION: ./reveal/05
+#+EXPORT_FILE_NAME: _index.md
+#+HUGO_MENU: :reveal_hugo
+#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Reveal"
+
+* Занятие №5
+Объекты и DOM.
+
+---
+
+** Объекты
+
+#+BEGIN_EXAMPLE
+let объект = {
+    св-во1: значение1
+    св-во2: значение2
+    ...
+}
+#+END_EXAMPLE
+
+https://ecma-international.org/ecma-262/10.0/index.html#prod-ObjectBindingPattern
+
+---
+
+#+BEGIN_SRC js
+  let car = {
+      color: 'red',
+      brand: 'BMW',
+  }
+  car.speed = 100;  // км/ч
+  car.isDriving = true;
+#+END_SRC
+
+---
+
+** Задание №1
+
+Добавьте свои свойства к этому объекту.
+
+---
+
+** ~this~
+
+Ключевое слово ~this~
+
+
+#+BEGIN_SRC js
+	car.drive = function() {
+	    this.isDriving = true;
+	}
+
+	car.stop = function() {
+	    this.isDriving = false;
+	}
+#+END_SRC
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+
+** DOM
