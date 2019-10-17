@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<!-- div[class=box]*5 -->
+</body>
+<script>
+	let divs = document.getElementsByClassName('box');
+	console.log(divs);
+	for (let div of divs) {
+		div.style.height = '100px';
+		div.style.width = '300px';
+		div.style.backgroundColor = 'dodgerblue';
+		div.style.margin = '10px';
+		div.style.display = 'inline-block'; // Не обязательно
+		console.log(div);
+	};
+	for (let i = 1; i < divs.length; i+=2) {
+		divs[i].style.backgroundColor = 'red' ;
+	}
+</script>
+</html>

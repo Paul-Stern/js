@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+      let car = {
+	  color: 'red',
+      }
+      car.brand = 'BMW';
+      car.speed = 100;
+      car.isDriving = false;
+      car.drive = function() {
+	  this.isDriving = true;
+	  console.log('Едем?', this.isDriving);;
+      }
+      car.stop = function() {
+	  this.isDriving = false;
+	  console.log('Едем?', this.isDriving);;	  
+      }
+      console.log(car);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+<script>
+	let car = {
+		color: 'red',
+		brand: 'BMW',
+		speed: 100, // км/ч
+		isDriving: false, // Едет или нет?
+		drive: function(time) {
+			alert('На старт!');
+			alert('Внимание!');
+			alert("Марш!");
+			this.isDriving = true;
+			let s = time * this.speed;
+			console.log(s);
+			this.stop();
+		},
+		stop: function() {
+			this.isDriving = false;
+		},
+	};
+	// car.drive = - Так не надо!
+</script>
+</html>

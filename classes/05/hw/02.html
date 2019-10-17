@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let array = [1, 7, true, 'string', false, 11 ];
+	// ['string', false, 11, 1, 7, true]
+	const swap = function(array) {
+		array.push(array.shift())
+	}
+	const makeChange = function() {
+		swap(array);
+		console.log(array);
+	}
+</script>
+</html>

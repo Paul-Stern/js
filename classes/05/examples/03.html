@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+      let car = {
+	  color: 'red',
+	  brand: 'BMW',
+	  isDriving: false,
+	  speed: 120,
+	  drive: function(time) {
+	      console.log('Поехали!');
+	      this.isDriving = true;
+	      distance = time * this.speed;
+	      console.log(`Проехали ${distance} км`);
+	      // console.log(`Проехали ${time * this.speed} км`);
+	      this.stop();
+	      return distance;
+	  },
+	  stop: function() {
+	      this.isDriving = false;
+	      console.log('Остановка!');
+	  }
+      }
+    </script>
+  </body>
+</html>
