@@ -1,5 +1,21 @@
 +++
+title = "JavaScript и веб-программирование"
 draft = false
 +++
 
-Just basic file with a custom theme
+Полезные материалы:
+
+-   <https://eloquentjavascript.net/>
+-   <https://developer.mozilla.org/en-US/>
+-   <https://developer.mozilla.org/ru/>#
+    -   <https://developer.mozilla.org/ru/docs/Web/JavaScript>
+    -   <https://developer.mozilla.org/ru/docs/Web/CSS>
+    -   <https://developer.mozilla.org/ru/docs/Web/HTML>
+-   <https://www.w3schools.com/>
+    -   <https://www.w3schools.com/js/default.asp>
+    -   <https://www.w3schools.com/css/default.asp>
+    -   <https://www.w3schools.com/html/default.asp>
+-   <https://webref.ru/>
+-   <https://material.io/>
+    -   <https://material.io/design/color/the-color-system.html#tools-for-picking-colors>
+-   <https://getsimpleform.com/>

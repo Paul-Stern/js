@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
+    <style>
+
+      /*
+Primary - #02ddee
+Complementary - #ff7d5e
+
+Primary - #7ddae4
+Complementary - #e4877d
+*/
+      * {
+	  box-sizing: border-box;
+      }
+
+      html {
+	  font-size: 16px;
+      }
+      
+      body {
+	  margin: 0;
+	  font-family: 'Roboto', sans-serif;
+	  background-color: #f2f2f2;
+      }
+
+      .form-container {
+	  background-color: #fff;
+	  max-width: 450px;
+	  width: 95%;
+	  margin: auto;
+	  padding: 40px;
+
+	  /* 05.html: */
+	  box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+	  
+	  /*11 01.html:*/
+	  margin-top: 50px;
+	  
+      }
+      #form {
+	  
+      }
+      
+      input {
+	  display: block;
+	  width: 100%;
+	  margin: 0.5rem 0;
+	  padding: 0.4rem 0;
+	  outline: none;
+	  font-size: 1rem;
+
+	  /*02.html:*/
+	  letter-spacing: 0.75px;
+
+	  /* 05.html: */
+	  border: none;
+	  border-bottom: 1.5px solid rgb(200,200,200);
+	  /* safari: */
+	  border-radius: 0;
+	  transition: 0.2 ease;
+	  -webkit-appearance: none;
+      }
+      /* 05.html: */
+      input:focus {
+	  border-color: #02ddee;
+      }
+      .form-heading {
+	  margin-top: 0;
+	  font-size: 1.5rem;
+	  font-weigth: 500;
+
+	  /*02.html:*/
+	  letter-spacing: 0.75px;
+	  
+      }
+      #submit {
+	  border: none;
+	  background-color: #02ddee;
+	  /* color: #fdfdfd ;*/
+	  color: #fff ;
+	  text-shadow: 0 0 2px rgba(0,0,0,0.2);
+	  border-radius: 3px;
+	  padding: 0.6rem 0;
+	  width: 150px;
+	  margin-left: calc(100% - 150px);
+	  box-shadow: 2px 2px 10px 0 rgba(0,0,0,0.2);
+	  /*02.html starts here*/
+
+	  cursor: pointer;
+	  transition: 0.2s ease;
+
+	  /* 05.html: */
+	  margin-top:1.5rem;
+      }
+      /*02.html:*/
+      #submit:active {
+	  transform: translate(2px, 2px);
+	  box-shadow: none;
+      }
+
+      /*04.html:*/
+      label {
+	  display: block;
+	  font-size: 0.9rem;
+	  letter-spacing:0.75px;
+	  color: rgb(68,68,68);
+	  /* color: #??????; */
+	  transform: translateY(2rem);
+	  transition: 0.2 ease;
+      }
+      /* 05.html: */
+      .focused {
+	  transform: translateX(-12.5%) translateY(0.2rem) scale(0.75);
+      }
+      /* ??? */
+      /* 11 04.html: */
+      input:-webkit-autofill {
+	  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div.form-container>form#form>input#name+input#email+input#submit -->
+    <div class="form-container">
+      <h3 class="form-heading">Форма</h3>
+      <!-- Внимание! actions -->
+      <form id="form" action="https://getsimpleform.com/messages?form_api_token=8e8fd8200eaea68bae2bdf16e77daf58" method="post" >
+	<input type="hidden" name="redirect_to" value="https://www.wikipedia.org/">
+	<div class="field">
+	  <label for="name">Имя</label>
+          <input id="name" name="name" type="text">
+	</div>
+	<div class="field">
+	  <label for="email">E-mail</label>
+          <input id="email" name="_replyto" type="email">
+	</div>
+	
+        <input id="submit" type="submit" value="Отправить"/>
+      </form>
+    </div>
+  </body>
+  <script>
+    let inputs = document.querySelectorAll('input');
+
+    for (let input of inputs) {
+	if (input.getAttribute('type') !== 'submit') {
+	    console.log(input)
+	    // workaround для остающегося текста
+	    if (input.value != '') {
+		let label = document.querySelector('label[for="'
+						   + input.id
+						   + '"]')
+	    }
+	    // надо ли?
+	    input.addEventListener('focusin', focusinInputHandler, false)
+	    input.addEventListener('focusout', focusoutInputHandler, false)
+	}
+    }
+
+    function focusinInputHandler() {
+	let label = document.querySelector('label[for="' + this.id + '"]')
+	// 11 02.html:
+	// Внимание!
+	label.classList.add('focused')
+	
+    }
+    function focusoutInputHandler() {
+	let label = document.querySelector('label[for="' + this.id + '"]')
+	if (this.value == '') {
+	    label.classList.remove('focused')
+	}
+    }
+  </script>
+</html>

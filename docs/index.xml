@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaScript</title>
+    <title>JavaScript и веб-программирование on JavaScript</title>
     <link>https://paul-stern.github.io/js/</link>
-    <description>Recent content on JavaScript</description>
+    <description>Recent content in JavaScript и веб-программирование on JavaScript</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>RU-ru</language>
     
 	<atom:link href="https://paul-stern.github.io/js/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://paul-stern.github.io/js/form/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://paul-stern.github.io/js/form/</guid>
+      <description>Document  /* Primary - #02ddee Complementary - #ff7d5e Primary - #7ddae4 Complementary - #e4877d */ * { box-sizing: border-box; } html { font-size: 16px; } body { margin: 0; font-family: &#39;Roboto&#39;, sans-serif; background-color: #f2f2f2; } .form-container { background-color: #fff; max-width: 450px; width: 95%; margin: auto; padding: 40px; /* 05.html: */ box-shadow: 0 0 10px 1px rgba(0,0,0,0.2); /*11 01.html:*/ margin-top: 50px; } #form { } input { display: block; width: 100%; margin: 0.</description>
+    </item>
     
   </channel>
 </rss>
