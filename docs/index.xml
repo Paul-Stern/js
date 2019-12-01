@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://paul-stern.github.io/js/form/</guid>
-      <description>Document  /* Primary - #02ddee Complementary - #ff7d5e Primary - #7ddae4 Complementary - #e4877d */ * { box-sizing: border-box; } html { font-size: 16px; } body { margin: 0; font-family: &#39;Roboto&#39;, sans-serif; background-color: #f2f2f2; } .form-container { background-color: #fff; max-width: 450px; width: 95%; margin: auto; padding: 40px; /* 05.html: */ box-shadow: 0 0 10px 1px rgba(0,0,0,0.2); /*11 01.html:*/ margin-top: 50px; } #form { } input { display: block; width: 100%; margin: 0.</description>
+      <description>Document  /* Primary - #02ddee Complementary - #ff7d5e Primary - #7ddae4 Complementary - #e4877d */ :root { --primary-color: #02ddee; --complementary-color: #ff7d5e ; } * { box-sizing: border-box; } html { font-size: 16px; } body { margin: 0; font-family: &#39;Roboto&#39;, sans-serif; background-color: #f2f2f2; } .form-container { background-color: #fff; max-width: 450px; width: 95%; margin: auto; padding: 40px; /* 05.html: */ box-shadow: 0 0 10px 1px rgba(0,0,0,0.2); /*11 01.html:*/ margin-top: 50px; } #form { } input { display: block; width: 100%; margin: 0.</description>
     </item>
     
   </channel>

@@ -6,14 +6,18 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
     <style>
-
       /*
 Primary - #02ddee
 Complementary - #ff7d5e
 
 Primary - #7ddae4
 Complementary - #e4877d
-*/
+     */
+      :root {
+	  --primary-color: #02ddee;
+	  --complementary-color: #ff7d5e ;
+      }
+      
       * {
 	  box-sizing: border-box;
       }
@@ -67,7 +71,7 @@ Complementary - #e4877d
       }
       /* 05.html: */
       input:focus {
-	  border-color: #02ddee;
+	  border-color: var(--primary-color);
       }
       .form-heading {
 	  margin-top: 0;
@@ -80,7 +84,7 @@ Complementary - #e4877d
       }
       #submit {
 	  border: none;
-	  background-color: #02ddee;
+	  background-color: var(--primary-color);
 	  /* color: #fdfdfd ;*/
 	  color: #fff ;
 	  text-shadow: 0 0 2px rgba(0,0,0,0.2);
@@ -129,6 +133,7 @@ Complementary - #e4877d
     <div class="form-container">
       <h3 class="form-heading">Форма</h3>
       <!-- Внимание! actions -->
+      <!-- Ссылка actions заканчивается на api token. Он для каждого свой -->
       <form id="form" action="https://getsimpleform.com/messages?form_api_token=8e8fd8200eaea68bae2bdf16e77daf58" method="post" >
 	<input type="hidden" name="redirect_to" value="https://www.wikipedia.org/">
 	<div class="field">

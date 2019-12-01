@@ -6,8 +6,12 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap" rel="stylesheet">
     <style>
-
        
+      :root {
+	  --primary-color: #02ddee;
+	  --complementary-color: #ff7d5e ;
+      }
+      
       * {
 	  box-sizing: border-box;
       }
@@ -61,7 +65,7 @@
       }
        
       input:focus {
-	  border-color: #02ddee;
+	  border-color: var(--primary-color);
       }
       .form-heading {
 	  margin-top: 0;
@@ -74,7 +78,7 @@
       }
       #submit {
 	  border: none;
-	  background-color: #02ddee;
+	  background-color: var(--primary-color);
 	   
 	  color: #fff ;
 	  text-shadow: 0 0 2px rgba(0,0,0,0.2);
@@ -122,6 +126,7 @@
     
     <div class="form-container">
       <h3 class="form-heading">Форма</h3>
+      
       
       <form id="form" action="https://getsimpleform.com/messages?form_api_token=8e8fd8200eaea68bae2bdf16e77daf58" method="post" >
 	<input type="hidden" name="redirect_to" value="https://www.wikipedia.org/">
