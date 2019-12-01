@@ -1,0 +1,3 @@
+- https://paul-stern.github.io/js/ :: Сборник материалов курса
+- https://paul-stern.github.io/js/forms :: Пример веб-страницы с веб-формой
+- https://paul-stern.github.io/js/reveal :: Слайды по основам JavaScript
