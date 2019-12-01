@@ -20,6 +20,7 @@ draft = false
         -   <https://www.w3schools.com/html/default.asp>
     -   <https://webref.ru/>
 -   Матералы для занятий
-    -   <https://material.io/>
-        -   <https://material.io/design/color/the-color-system.html#tools-for-picking-colors>
-    -   <https://getsimpleform.com/>
+    -   **<https://material.io/>:** Дизайнерская система от Google.
+        -   **<https://material.io/design/color/the-color-system.html#tools-for-picking-colors>:** Подбор цветовой схемы.
+    -   **<https://developer.mozilla.org/en-US/docs/Web/CSS/Using%5FCSS%5Fcustom%5Fproperties>:** &bdquo;Переменные&rdquo; в CSS.
+    -   **<https://getsimpleform.com/>:** Сервис для работы форм.
