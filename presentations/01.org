@@ -1,8 +1,13 @@
 #+HUGO_BASE_DIR: ../site/
 #+HUGO_SECTION: ./reveal/01
-#+EXPORT_FILE_NAME: _index.md
+
+# #+EXPORT_FILE_NAME: _index.md
+
+#+EXPORT_FILE_NAME: _index
 #+HUGO_MENU: :reveal_hugo
-#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Reveal" :aliases "/reveal/"
+#+HUGO_CUSTOM_FRONT_MATTER: :outputs "Reveal" :aliases "/reveal/" 
+
+# :markup "blackfriday"
 # [reveal_hugo]
 
 * Программирование на языке JavaScript
