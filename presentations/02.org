@@ -433,6 +433,9 @@ if (bool1) {
 }
 #+END_EXAMPLE
 
+- bool \mdash логические выражения
+- code \mdash списки инструкций
+
 ---
 
 Условный оператор if else также называется оператором ветвления. Он позволяет программе идти по разным \bdquo{}веткам\rdquo кода в зависимости от выполнения условия. 
@@ -447,6 +450,28 @@ if (bool1) {
     if(true) {
 	console.log(1);
     } else if(true) {
+	console.log(2);
+    } else {
+	console.log(3);
+    };
+#+END_SRC
+
+---
+#+BEGIN_SRC js
+    if(false) {
+	console.log(1);
+    } else if(true) {
+	console.log(2);
+    } else {
+	console.log(3);
+    };
+#+END_SRC
+
+---
+#+BEGIN_SRC js
+    if(false) {
+	console.log(1);
+    } else if(false) {
 	console.log(2);
     } else {
 	console.log(3);

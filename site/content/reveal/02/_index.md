@@ -431,7 +431,7 @@ false || true // true
 ---
 
 
-#### Условный оператор if(если) else(иначе) {#условный-оператор-if--если--else--иначе}
+### Условный оператор if(если) else(иначе) {#условный-оператор-if--если--else--иначе}
 
 ```text
 if (bool1) {
@@ -444,6 +444,9 @@ if (bool1) {
   ... code else ...
 }
 ```
+
+-   bool &mdash; логические выражения
+-   code &mdash; списки инструкций
 
 ---
 
@@ -459,6 +462,30 @@ if (bool1) {
 if(true) {
     console.log(1);
 } else if(true) {
+    console.log(2);
+} else {
+    console.log(3);
+};
+```
+
+---
+
+```js
+if(false) {
+    console.log(1);
+} else if(true) {
+    console.log(2);
+} else {
+    console.log(3);
+};
+```
+
+---
+
+```js
+if(false) {
+    console.log(1);
+} else if(false) {
     console.log(2);
 } else {
     console.log(3);

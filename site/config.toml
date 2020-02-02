@@ -20,9 +20,14 @@ isHTML = true
 [params.reveal_hugo]
 theme = "moon"
 
-# see https://gohugo.io/getting-started/configuration-markup/
+# New config since 0.60.0
+# see https://gohugo.io/getting-started/configuration-markup/ ,
+# https://gohugo.io/content-management/formats/
+
 
 [markup]
+  # defaultMarkdownHandler = "goldmark"
+  defaultMarkdownHandler = "blackfriday"
   [markup.goldmark]
     # [markup.goldmark.extensions]
     #   definitionList = true

@@ -19,8 +19,8 @@
       <div class="topnav">
 	Занятия:
 	<a href="../01">№ 1</a>
-	
-	
+	<a href="../02">№ 2</a>
+	<a href="../03">№ 3</a>
 	
       </div>
       
@@ -429,7 +429,7 @@ false || true // true
 
 </section><section>
 
-<h4 id="условный-оператор-if--если--else--иначе">Условный оператор if(если) else(иначе)</h4>
+<h3 id="условный-оператор-if--если--else--иначе">Условный оператор if(если) else(иначе)</h3>
 
 <pre><code class="language-text">if (bool1) {
   ... code1 ...
@@ -441,6 +441,11 @@ false || true // true
   ... code else ...
 }
 </code></pre>
+
+<ul>
+<li>bool &mdash; логические выражения</li>
+<li>code &mdash; списки инструкций</li>
+</ul>
 
 </section><section>
 
@@ -455,6 +460,28 @@ false || true // true
 <pre><code class="language-js">if(true) {
     console.log(1);
 } else if(true) {
+    console.log(2);
+} else {
+    console.log(3);
+};
+</code></pre>
+
+</section><section>
+
+<pre><code class="language-js">if(false) {
+    console.log(1);
+} else if(true) {
+    console.log(2);
+} else {
+    console.log(3);
+};
+</code></pre>
+
+</section><section>
+
+<pre><code class="language-js">if(false) {
+    console.log(1);
+} else if(false) {
     console.log(2);
 } else {
     console.log(3);
